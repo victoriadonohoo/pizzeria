@@ -1,4 +1,4 @@
-{% extends "MainApp/base.html" %}
+{% extends "pizzas/base.html" %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
     {% csrf_token %}
     {{ form.as_p }}
 
-    <button name="submit"> Submit </button>
+    <button name="submit"> Add Comment </button>
 </form>
 
 {% endblock content %}

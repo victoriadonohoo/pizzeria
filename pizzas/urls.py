@@ -9,7 +9,3 @@ urlpatterns = [
     path('pizzas/<int:pizza_id>/', views.pizza, name='pizza'),
     path('comments/<int:pizza_id>/', views.comments, name='comments'),
 ]
-
-#new model 
-#copy new entry views 
-#model for entry 

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Pizza, Topping
 from .forms import CommentForm
 
@@ -27,10 +27,10 @@ def comments(request, pizza_id):
     else:
         form = CommentForm(data=request.POST)
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.pizza = pizza
-            comment.save()
-            return redirect('pizzas:comments', pizza_id=pizza_id)
+            comments = form.save(commit=False)
+            comments.pizza = pizza
+            comments.save()
+            return redirect('pizzas:pizza', pizza_id=pizza_id)
 
     context = {'form': form, 'pizza': pizza}
     return render(request, 'pizzas/comments.html', context)
