@@ -20,7 +20,7 @@
 <p> Comments: </p>
 
 <ul>
-    {% for c in comments %}
+    {% for c in comment %}
 
     <li>
         <p>{{ c.text | linebreaks }}</p>
@@ -31,6 +31,6 @@
     <li> There are no comments on this pizza. </li>
     {% endfor %}
 </ul>
-<p> <a href="{% url 'pizzas:comments' pizza.id %}"> Add a Comment </a></p>
+<p> <a href="{% url 'pizzas:comment' pizza.id %}"> Add a Comment </a></p>
 
 {% endblock content %}
